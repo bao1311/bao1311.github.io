@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
+  <title id="title">Buck converter power flow</title>
+  <desc id="desc">Input supply passes through a switching stage and LC filter to the output load, with a feedback path returning to the controller.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#101b2a"/>
+      <stop offset="1" stop-color="#0b111b"/>
+    </linearGradient>
+    <linearGradient id="power" x1="0" x2="1">
+      <stop offset="0" stop-color="#27e0a3"/>
+      <stop offset="1" stop-color="#68a7ff"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0L9 3 0 6Z" fill="#68a7ff"/>
+    </marker>
+    <style>
+      .label{font:700 16px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:2px;fill:#8091aa}
+      .value{font:700 28px Inter,system-ui,sans-serif;fill:#edf5ff}
+      .hint{font:500 15px Inter,system-ui,sans-serif;fill:#91a0b6}
+      .box{fill:#142235;stroke:#29405d;stroke-width:2}
+    </style>
+  </defs>
+  <rect width="1200" height="330" rx="26" fill="url(#bg)"/>
+  <g opacity=".15" stroke="#6685a8"><path d="M0 55h1200M0 110h1200M0 165h1200M0 220h1200M0 275h1200"/><path d="M100 0v330M200 0v330M300 0v330M400 0v330M500 0v330M600 0v330M700 0v330M800 0v330M900 0v330M1000 0v330M1100 0v330"/></g>
+  <path d="M225 122h82M503 122h82M781 122h84" stroke="url(#power)" stroke-width="6" stroke-linecap="round" marker-end="url(#arrow)" filter="url(#glow)"/>
+  <g transform="translate(55 70)"><rect class="box" width="170" height="104" rx="16"/><text class="label" x="20" y="32">INPUT</text><text class="value" x="20" y="68">[9–16 V]</text><text class="hint" x="20" y="91">DC supply</text></g>
+  <g transform="translate(307 70)"><rect class="box" width="196" height="104" rx="16"/><text class="label" x="20" y="32">SWITCH</text><path d="M22 76h28V48h34v28h34V48h34v28h22" fill="none" stroke="#27e0a3" stroke-width="4"/><text class="hint" x="122" y="92">[500 kHz]</text></g>
+  <g transform="translate(585 70)"><rect class="box" width="196" height="104" rx="16"/><text class="label" x="20" y="32">LC FILTER</text><path d="M20 69h18c5-27 22-27 27 0 5-27 22-27 27 0h18m18-24v48m17-48v48m0-24h31" fill="none" stroke="#7bb0ff" stroke-width="4"/><text class="hint" x="20" y="95">Store + smooth</text></g>
+  <g transform="translate(865 70)"><rect class="box" width="280" height="104" rx="16"/><text class="label" x="20" y="32">OUTPUT</text><text class="value" x="20" y="68">[5 V · 3 A]</text><text class="hint" x="20" y="91">Regulated load</text></g>
+  <path d="M1005 188v68H420v-57" fill="none" stroke="#ffbd5b" stroke-width="3" stroke-dasharray="8 8" marker-end="url(#arrow)"/>
+  <g transform="translate(635 235)"><rect x="0" y="0" width="165" height="52" rx="26" fill="#261f18" stroke="#75552a"/><circle cx="27" cy="26" r="7" fill="#ffbd5b"/><text class="label" x="48" y="32" fill="#ffbd5b">FEEDBACK</text></g>
+</svg>
