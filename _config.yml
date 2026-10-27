@@ -120,7 +120,7 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: bao1311/bao-phi.github.io # Your GitHub repository
+    repo: bao1311/bao1311.github.io # Your GitHub repository
     repo_id: # Get this from https://giscus.app after enabling discussions
     category: General # Or create a "Comments" category
     category_id: # Get this from https://giscus.app after enabling discussions
