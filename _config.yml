@@ -121,9 +121,9 @@ comments:
   # Giscus options › https://giscus.app
   giscus:
     repo: bao1311/bao1311.github.io # Your GitHub repository
-    repo_id: # Get this from https://giscus.app after enabling discussions
+    repo_id: R_kgDOPoYWjQ # Get this from https://giscus.app after enabling discussions
     category: General # Or create a "Comments" category
-    category_id: # Get this from https://giscus.app after enabling discussions
+    category_id: DIC_kwDOPoYWjc4Cu4ID # Get this from https://giscus.app after enabling discussions
     mapping: pathname # Use page pathname as unique identifier
     strict: 0 # Use fuzzy matching
     input_position: bottom # Comment box at bottom
