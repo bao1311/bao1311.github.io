@@ -46,6 +46,10 @@ For a simple starting point, I tried equal resistors: R1 = R2 = 10 kΩ. That put
 
 In my LTspice circuit, a 12 V source feeds the node through a 10 kΩ resistor, and the TL431 sits across the divider. The output trace sits around 5.002 V in this model. Seeing that helped the equation feel a bit less abstract: the divider samples the voltage, and the TL431 adjusts its current to hold the node near the target.
 
+![LTspice schematic of a TL431 with a 12 V supply and 10 kΩ resistors, alongside an output trace near 5.002 V](/assets/img/flyback/tl431-ltspice.png)
+
+*My first TL431 test: equal divider resistors give a target near 5 V, and this model shows about 5.002 V.*
+
 There’s one detail I still need to keep an eye on. The supply resistor only provides about (12 − 5) / 10 kΩ = 0.7 mA, and the divider uses some of that too. A flat trace in this simulation doesn’t tell me whether a real TL431 has enough cathode current to regulate reliably. I’ll need to check the minimum current for the exact part before choosing resistor values for hardware.
 
 For now, my takeaway is that the TL431 is continuously adjusting current. In the flyback feedback circuit, that changing current helps drive the optocoupler LED. The divider chooses the voltage target; bias current, voltage headroom, and compensation still need attention. The [TI TL431 datasheet](https://www.ti.com/lit/ds/symlink/tl431.pdf) is what I’m using to check those details.
