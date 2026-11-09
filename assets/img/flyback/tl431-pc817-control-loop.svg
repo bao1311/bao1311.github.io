@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="660" viewBox="0 0 1040 660" role="img" aria-labelledby="title desc">
+<title id="title">Isolated flyback control loop with TL431 and PC817</title>
+<desc id="desc">The PWM controller drives the MOSFET and flyback transformer. The secondary rectifier and filter supply the load. Output voltage is sampled by a divider and compared with the TL431 internal reference. The TL431 controls the PC817 LED; its phototransistor passes feedback to the primary-side controller. Both the transformer and optocoupler cross the isolation boundary.</desc>
+<defs>
+ <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8Z" fill="#286b53"/></marker>
+ <style>
+ text{font-family:Arial,sans-serif;fill:#303c37;text-anchor:middle} .box{fill:#edf5e9;stroke:#8daa96;stroke-width:1.5} .label{font-size:18px;font-weight:600} .small{font-size:15px;fill:#526256} .wire{fill:none;stroke:#286b53;stroke-width:2.5;marker-end:url(#arrow)} .note{font-size:14px;fill:#626e65}
+ </style>
+</defs>
+<rect width="1040" height="660" rx="18" fill="#fffcf7"/>
+<text x="520" y="40" font-size="25" font-weight="600">Flyback control loop</text>
+<text x="520" y="68" class="small">Energy goes to the output. Feedback returns to the controller.</text>
+<path d="M490 112V535" stroke="#ad9466" stroke-width="2" stroke-dasharray="6 7"/>
+<text x="330" y="115" class="small">PRIMARY SIDE</text>
+<text x="795" y="115" class="small">SECONDARY SIDE</text>
+<text x="490" y="552" class="note">Isolation boundary</text>
+<!-- Forward power path -->
+<rect x="35" y="170" width="160" height="100" rx="12" class="box"/>
+<text x="115" y="204" class="label">PWM controller</text><text x="115" y="230" class="small">Current-mode</text><text x="115" y="251" class="small">control</text>
+<rect x="245" y="170" width="130" height="100" rx="12" class="box"/>
+<text x="310" y="216" class="label">MOSFET</text><text x="310" y="241" class="small">Power switch</text>
+<rect x="435" y="170" width="245" height="100" rx="12" class="box"/>
+<text x="557" y="211" class="label">Flyback transformer</text><text x="557" y="239" class="small">Energy storage &amp; transfer</text>
+<rect x="735" y="170" width="160" height="100" rx="12" class="box"/>
+<text x="815" y="209" class="label">Rectifier</text><text x="815" y="236" class="small">+ output filter</text>
+<path d="M195 220H245" class="wire"/><text x="220" y="155" class="note">Gate</text>
+<path d="M375 220H435" class="wire"/>
+<path d="M680 220H735" class="wire"/>
+<path d="M895 220H991" class="wire"/>
+<text x="958" y="190" class="label">Vout</text><text x="958" y="258" class="small">To load</text>
+<!-- Inner current feedback -->
+<path d="M310 270V313H115V270" class="wire"/>
+<text x="213" y="338" class="note">Primary switch-current sense</text>
+<!-- Outer voltage feedback -->
+<path d="M947 220V450H895" class="wire"/><circle cx="947" cy="220" r="4" fill="#286b53"/>
+<rect x="735" y="405" width="160" height="90" rx="12" class="box"/>
+<text x="815" y="444" class="label">Voltage divider</text><text x="815" y="471" class="small">Sample Vout</text>
+<rect x="600" y="405" width="105" height="90" rx="12" class="box"/>
+<text x="652" y="440" class="label">TL431</text><text x="652" y="466" class="small">Error amp</text>
+<path d="M735 450H705" class="wire"/>
+<rect x="350" y="392" width="220" height="115" rx="12" fill="#fbf2dc" stroke="#ad9466" stroke-width="1.5"/>
+<text x="460" y="417" class="label">PC817</text>
+<text x="393" y="449" class="small">Transistor</text><text x="530" y="449" class="small">LED</text>
+<path d="M497 463H442" stroke="#ad9466" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<text x="470" y="490" class="note">Optical feedback</text>
+<!-- The LED and transistor sit on opposite sides of the isolation boundary. -->
+<path d="M570 450H600" stroke="#fffcf7" stroke-width="8"/>
+<path d="M600 450H570" class="wire"/>
+<path d="M350 450H115V270" class="wire"/>
+<text x="222" y="432" class="note">To controller control node*</text>
+<path d="M652 369V405" class="wire"/>
+<text x="652" y="354" class="note">Internal reference ≈ 2.495 V</text>
+<text x="520" y="593" class="small">Negative feedback: rising Vout → increased LED current → less energy commanded*</text>
+<text x="520" y="620" class="note">*Typical feedback polarity; FB/COMP connection depends on the controller circuit.</text>
+<text x="520" y="642" class="note">Functional diagram only. Primary and secondary returns are electrically separate.</text>
+</svg>

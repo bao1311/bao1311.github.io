@@ -41,3 +41,5 @@ The TL431 and PC817 optocoupler are the parts I want to understand better. They 
 In a typical circuit, a resistor divider samples the output voltage. The TL431 responds by adjusting the optocoupler LED current. The optocoupler passes that feedback across the isolation barrier, allowing the controller to adjust the switching action. Texas Instruments describes this in its [optocoupler feedback guide](https://www.ti.com/document-viewer/lit/html/SSZTCW5/GUID-176CD139-5619-4F61-9C64-F032884185A1).
 
 Following that signal—from the output divider, through the TL431 and PC817, back to the controller—gives me a smaller part of the circuit to study first.
+
+For a closer look at this signal path, read [TL431 + PC817: Understanding the Flyback Feedback Loop]({% post_url 2026-11-08-understanding-tl431-pc817-flyback-feedback %}).
