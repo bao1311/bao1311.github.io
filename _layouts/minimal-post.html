@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    {% include favicons.html %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title | escape }} · {{ site.title | escape }}</title>
+    <meta name="description" content="{{ page.description | escape }}">
+    <link rel="stylesheet" href="{{ '/assets/css/minimal-post.css' | relative_url }}">
+  </head>
+  <body>
+    <a class="skip-link" href="#article">Skip to article</a>
+    <div class="reading-page">
+      <nav aria-label="Main navigation">
+        <a href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
+        <a href="{{ '/archives/' | relative_url }}" class="nav-posts">Browse posts <span aria-hidden="true">↗</span></a>
+      </nav>
+      <main id="article">
+        <article>
+          <header>
+            <p class="eyebrow">Notes from my engineering journey</p>
+            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>
+            <h1>{{ page.title }}</h1>
+            {% if page.description %}<p class="intro">{{ page.description | escape }}</p>{% endif %}
+          </header>
+          <div class="prose">{{ content }}</div>
+        </article>
+      </main>
+      <footer><p>Thanks for reading.</p><a href="{{ '/archives/' | relative_url }}">Explore more notes <span aria-hidden="true">→</span></a></footer>
+    </div>
+  </body>
+</html>

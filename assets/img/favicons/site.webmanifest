@@ -1,0 +1,13 @@
+---
+layout: null
+---
+{
+  "name": {{ site.title | jsonify }},
+  "short_name": {{ site.title | jsonify }},
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "theme_color": "#286b53",
+  "background_color": "#fffcf7",
+  "display": "standalone"
+}
