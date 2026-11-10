@@ -41,4 +41,29 @@ Next, select **Altium Designer** as the CAD platform and download the ZIP file.
 
 ![Selecting the CAD platform and downloading the component files](/assets/img/altium_designer/cad_download.png)
 
-It’s a helpful starting point. Before using them, I still need to compare the symbol’s pin assignments and the footprint’s pad numbering and dimensions with the datasheet for the exact part.
+### 2. Add the symbol to your library
+
+Open the downloaded `.LibPkg` file in Altium Designer, then open its schematic library (`.SchLib`). Copy the component into the `.SchLib` you want to use for your project.
+
+Here’s the imported **LT1245** symbol before any changes:
+
+![Original LT1245 schematic symbol imported into Altium Designer](/assets/img/altium_designer/LT1245_imported.png)
+
+### 3. Arrange the symbol to make the schematic easier to read
+
+One useful trick is to move the pins around the symbol so the connections are easier to follow. For my layout, I grouped them like this:
+
+- **Top:** VCC
+- **Bottom:** GND and RT/CT
+- **Right:** OUTPUT and ISENSE
+- **Left:** COMP, FB, and VREF
+
+This changes where the pins appear on the drawing. **Keep each pin’s number and electrical identity unchanged**, so it still connects to the correct footprint pad.
+
+I like keeping pin numbers outside the symbol body and pin names inside. It makes the symbol easier to scan while drawing the circuit.
+
+Here’s the edited version:
+
+![LT1245 schematic symbol with pins rearranged for a clearer schematic](/assets/img/altium_designer/LT1245_modded.png)
+
+You can also edit the component’s description, designator, and comment in the **Properties** panel. Before moving on, compare the pin names and numbers with the datasheet to make sure nothing changed accidentally.
