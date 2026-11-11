@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "7 Examples from My First Schematic Project in Altium Designer"
+title: "Schematic Capture in Altium Designer: 7 Practical Examples"
 date: 2026-11-10 00:00:00 -0500
 categories: [PCB Design, Learning Notes]
 tags: [Altium Designer, PCB, footprints, design rules, electronics]
-description: "A few examples from my time learning Altium Designer, from finding symbols and arranging pins to organizing sheets and following connections."
+description: "Seven schematic capture examples covering component libraries, pin mapping, sheet organization, ports, and net connectivity in Altium Designer."
 image:
   path: /assets/img/altium_designer/LT1245_modded.png
   alt: "LT1245 schematic symbol with pins arranged for readability"
@@ -12,17 +12,17 @@ published: true
 toc: true
 ---
 
-While working on my first schematic project in Altium Designer, I came across a few things that took some figuring out. I’m collecting them here with screenshots, partly as notes for myself and partly in case they’re useful to someone else getting started.
+Schematic capture brings together component libraries, pin mapping, and signal connectivity. In this article, I’m sharing seven examples from working in Altium Designer: importing symbols, arranging pins without changing their identities, organizing sheets, and inspecting connections.
 
-These seven examples come from the **schematic capture** side of the project. I’m still learning, so this is a look at what I’ve been exploring along the way.
+The screenshots focus on the schematic workflow, with an LT1245 symbol as the editing example.
 
-## A little context behind the drawing
+## How this project started
 
-An isolated sensing circuit is a useful example of why schematic decisions matter. The measurement signal needs to cross an isolation barrier while the sensing and controller sides keep separate electrical references.
+My manager gave me a circuit design and asked me to turn it into a schematic in Altium Designer. Part of the work involved an **isolated amplifier** for passing a measurement signal from the high-voltage sensing side to the low-voltage controller side.
 
-Some isolated amplifiers also include isolated power transfer; others need a separate supply on the sensing side. That distinction needs to come from the exact device’s datasheet. On the schematic, I want the supply connections and isolation boundary to be clear to the next person reading it.
+The earlier sensing circuit shared a ground between those sides. My manager identified the need for isolation, so the updated design used an isolated amplifier to pass the signal while keeping the two electrical references separate. My role was to draw the updated circuit in Altium.
 
-The LT1245 symbol below is a separate symbol-editing example, not the isolated amplifier.
+That gave me a chance to get familiar with finding component symbols, arranging pins, and following connections. For the symbol-editing example below, I’m using a different component—the **LT1245**—to show the import and editing process.
 
 ## Bringing the design into Altium
 
@@ -36,7 +36,7 @@ There are two ways I’ve used to get component models: Ultra Librarian and Alti
 
 I mostly use **Ultra Librarian** to find the IC’s schematic symbol and PCB footprint, then add them to the library.
 
-![Finding the component CAD models on Ultra Librarian](/assets/img/altium_designer/ultra_librarian.png)
+![LT1245 symbol, footprint, and 3D model on Ultra Librarian](/assets/img/altium_designer/ultra_librarian.png)
 
 From there, I select **Altium Designer** as the CAD platform and download the ZIP file.
 
@@ -94,11 +94,11 @@ Sometimes I need more room to keep related circuits together. Increasing the she
 
 I get to the sheet settings by clicking a blank area so nothing is selected, then opening the **Properties** panel. Double-clicking the sheet border also opens the document options.
 
-![Properties panel used to access schematic document options](/assets/img/altium_designer/panel_properties.png)
+![Opening the Properties panel for schematic document options](/assets/img/altium_designer/standard_page_size_options.png)
 
 The standard sheet sizes are under **Page Options**. A linked template can affect these settings too. See Altium’s [schematic document setup guide](https://www.altium.com/documentation/altium-designer/schematic/setting-up-document) for the available options.
 
-![Standard sheet size options in the schematic Properties panel](/assets/img/altium_designer/standard_page_size_options.png)
+![Standard sheet size options in the schematic Properties panel](/assets/img/altium_designer/panel_properties.png)
 
 ### 5. Getting things lined up with the snap grid
 
@@ -151,4 +151,4 @@ The [schematic shortcut reference](https://www.altium.com/documentation/altium-d
 
 ## Where I’m at so far
 
-These are a few snapshots of my schematic work so far. I still have more to explore, including documenting the pin-by-pin datasheet checks and project validation. For now, it’s been helpful to slow down and understand one small part of the drawing at a time.
+These examples document the schematic workflow rather than a completed electrical validation. Pin-by-pin datasheet checks and project validation are separate checks to document. I’m still learning, and sharing these examples helps me put the details into words.
